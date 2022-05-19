@@ -1,0 +1,47 @@
+/*	-WHAT IS THIS?-
+	This file adds optional material to "MPMB's Character Record Sheet" found at https://flapkan.com/mpmb/charsheets
+	Import this file using the "Add Extra Materials" bookmark.
+
+	-KEEP IN MIND-
+	It is recommended to enter the code in a fresh sheet before adding any other information (i.e. before making your character with it).
+*/
+
+/*  -INFORMATION-
+	Subject:	Weapons and Equipment Packs
+	Effect:		This script adds a custom weapon
+	Code by:	MorePurpleMoreBetter
+	Date:		2022-05-19 (sheet v13.00.00)
+				The code will work in v12.999 but will require closing and opening the sheet before the packs are available
+
+	IMPORTANT: adding this script will remove a couple of alternative names for weapons (e.g. longsword will no longer trigger for anything other than just 'longsword')
+	Note that this content is not balanced well for all weapons and the official D&D 5e rules state that you are better off using the weapon stats from the PHB and switching out their names for something else (e.g. the sickle stats fit a kama)
+*/
+
+var iFileName = "Custom Weapon, transcribed by MPMB].js";
+RequiredSheetVersion(12.999);
+
+SourceList["na"] = {
+	name : "Custom Weapon",
+	abbreviation : "na",
+	group : "meh",
+	url : "none",
+	date : "2022/05/19"
+};
+
+WeaponsList["hefty heartwood-hafted hamaxe of momentum"] = {
+	regExpSearch : /^(?=.*hefty)(?=.*hamaxe).*$/i,
+	name : "Astvinur Hefnd",
+	source : ["HB", 0],
+	list : "melee",
+	ability : 1,
+	type : "Martial",
+	damage : [1, 10, "bludgeoning"],
+	range : "Melee",
+	weight : 10,
+	description : "Heavy, versatile (1d12) Target DC15 STR or knocked 10ft away and Prone",
+	abilitytodamage : true,
+	modifiers : [1,Str+1],
+	isMagicWeapon : true,
+	tooltip : "STR 16 REQUIRED to weild this weapon proficiently." 
+};
+
